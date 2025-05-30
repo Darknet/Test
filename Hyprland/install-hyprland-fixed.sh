@@ -1666,9 +1666,20 @@ post_install_setup() {
         cd ~
     fi
     
-    # Set up Fish shell completions
+    # Set up Fish shell completions (simplified approach)
     if command -v fish &> /dev/null; then
-        fish -c "curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher" 2>/dev/null || true
+        log "Setting up Fish shell..."
+        # Create a temporary script for Fish setup
+        cat > /tmp/setup_fish.fish <<'FISH_EOF'
+if not functions -q fisher
+    curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source
+    fisher install jorgebucaran/fisher
+end
+FISH_EOF
+        
+        # Execute the Fish script
+        fish /tmp/setup_fish.fish 2>/dev/null || true
+        rm -f /tmp/setup_fish.fish
     fi
     
     # Create autostart script
