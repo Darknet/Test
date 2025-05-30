@@ -430,3 +430,13 @@ main() {
     install_dev_tools
     copy_configurations
     download_wallpapers
+    # ... (continuación del script principal)
+
+boot_now" ]]; then
+        sudo reboot
+    fi
+}
+
+# Run main function
+main "$@"
+
