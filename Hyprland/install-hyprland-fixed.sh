@@ -145,6 +145,7 @@ install_base_packages() {
         
         # Basic applications
         "firefox"
+        "brave"
         "mpv"
         "imv"
         "btop"
