@@ -1,0 +1,202 @@
+Usage
+
+First Time Setup
+Run the installation script
+Follow the interactive prompts
+Reboot your system
+Select Hyprland from the login screen
+
+Key Bindings
+
+Window Management
+Super + Q - Open terminal
+Super + C - Close window
+Super + V - Toggle floating
+Super + J - Toggle split
+Super + P - Toggle pseudo
+Super + F - Toggle fullscreen
+Super + H/L/K/J - Move focus
+
+Workspaces
+Super + 1-9 - Switch to workspace
+Super + Shift + 1-9 - Move window to workspace
+Super + S - Toggle special workspace
+Super + Mouse Wheel - Cycle workspaces
+
+Applications
+Super + R - Application launcher (Wofi)
+Super + Shift + R - Run command
+Super + E - File manager
+Super + B - Web browser
+
+System
+Super + L - Lock screen
+Super + M - Exit menu
+Super + Shift + E - Logout menu
+Print - Screenshot (full screen)
+Super + Print - Screenshot (window)
+Super + Shift + Print - Screenshot (area)
+Audio & Brightness
+Volume Up/Down - Adjust volume
+Mute - Toggle mute
+Brightness Up/Down - Adjust brightness
+Super + V - Clipboard history
+
+Useful Scripts
+
+Screenshot Management
+screenshot area      # Select area to capture
+screenshot window    # Capture active window
+screenshot full      # Capture entire screen
+
+Wallpaper Management
+wallpaper random     # Set random wallpaper
+wallpaper current    # Show current wallpaper
+wallpaper list       # List available wallpapers
+wallpaper /path/to/image  # Set specific wallpaper
+
+System Maintenance
+system-update        # Update all packages
+hypr-reload         # Reload Hyprland configuration
+
+
+Configuration
+
+Directory Structure
+
+~/.config/
+├── hypr/           # Hyprland configuration
+├── waybar/         # Status bar configuration
+├── wofi/           # Application launcher
+├── rofi/           # Alternative launcher
+├── dunst/          # Notifications
+├── kitty/          # Terminal
+├── fish/           # Shell configuration
+└── starship.toml   # Prompt configuration
+
+
+Customization
+Hyprland Configuration
+Edit ~/.config/hypr/hyprland.conf to customize:
+
+Key bindings
+
+Window rules
+Animations
+Decorations
+Input settings
+Waybar Configuration
+
+Edit ~/.config/waybar/config.jsonc and ~/.config/waybar/style.css to customize:
+
+Modules and layout
+Colors and styling
+Click actions
+Theme Customization
+GTK Theme: Use nwg-look for GUI configuration
+Cursor Theme: Modify in Hyprland config
+Icon Theme: Set via GTK settings
+Font: Configure in individual application configs
+
+
+Troubleshooting
+
+Common Issues
+
+Waybar Not Starting
+# Kill existing instances
+pkill waybar
+
+# Start manually
+waybar &
+
+
+NVIDIA Issues
+
+Ensure NVIDIA drivers are properly installed
+Check Hyprland NVIDIA-specific configuration
+Verify environment variables in ~/.pam_environment
+
+Audio Not Working
+# Restart PipeWire
+systemctl --user restart pipewire pipewire-pulse
+
+Screen Sharing Not Working
+# Install additional portals
+yay -S xdg-desktop-portal-hyprland
+
+Wallpaper Not Loading
+# Restart SWWW
+pkill swww
+swww init
+wallpaper random
+
+
+Log Files
+Hyprland: ~/.cache/hyprland/hyprland.log
+Waybar: Check with journalctl --user -u waybar
+SDDM: /var/log/sddm.log
+Performance Issues
+Disable animations in Hyprland config
+Reduce Waybar update intervals
+Check GPU drivers
+Monitor system resources with btop
+Uninstallation
+To completely remove Hyprland and all configurations:
+
+~/uninstall-hyprland.sh
+
+This will:
+
+Remove all installed packages
+Delete configuration files
+Restore system to previous state
+Provide cleanup instructions
+Contributing
+Reporting Issues
+Check existing issues
+Provide system information
+Include relevant log files
+Describe steps to reproduce
+Feature Requests
+Describe the feature
+Explain the use case
+Provide implementation suggestions
+Pull Requests
+Fork the repository
+Create a feature branch
+Test thoroughly
+Submit with clear description
+License
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+Acknowledgments
+Hyprland - vaxerski and contributors
+Waybar - Alexays and contributors
+Catppuccin - Theme creators
+Arch Linux - Community and maintainers
+All package maintainers - For their excellent work
+Support
+Documentation: Hyprland Wiki
+Community: Hyprland Discord
+Issues: GitHub Issues
+Note: This script is designed for Arch Linux. For other distributions, package names and installation methods may differ.
+
+
+El script está ahora completo con:
+
+1. **Instalación completa de Hyprland** con todas las dependencias
+2. **Configuraciones optimizadas** para todos los componentes
+3. **Scripts útiles** para gestión del sistema
+4. **Soporte para NVIDIA** y Waydroid
+5. **Temas consistentes** (Catppuccin)
+6. **Documentación completa** en el README
+7. **Script de desinstalación** incluido
+8. **Manejo de errores** robusto
+9. **Configuración post-instalación** automática
+10. **Solución de problemas comunes**
+
+Para usar el script:
+
+```bash
+curl -fsSL [URL_DEL_SCRIPT] | bash
