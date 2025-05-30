@@ -25,6 +25,263 @@ tooltip {
     padding: 5px;
     color: #313244;
     margin-right: 5px;
+    background: #45475a;
+    border-radius: 10px;
 }
 
-#
+#workspaces button:hover {
+    background: #585b70;
+    color: #cdd6f4;
+}
+
+#workspaces button.active {
+    background: #89b4fa;
+    color: #1e1e2e;
+}
+
+#workspaces button.focused {
+    background: #a6adc8;
+    color: #1e1e2e;
+}
+
+#workspaces button.urgent {
+    background: #f38ba8;
+    color: #1e1e2e;
+}
+
+#mode {
+    background: #64748b;
+    border-bottom: 3px solid #cdd6f4;
+}
+
+#clock,
+#battery,
+#cpu,
+#memory,
+#disk,
+#temperature,
+#backlight,
+#network,
+#pulseaudio,
+#wireplumber,
+#custom-media,
+#tray,
+#mode,
+#idle_inhibitor,
+#scratchpad,
+#mpd {
+    padding: 0 10px;
+    color: #cdd6f4;
+    background: #313244;
+    margin: 3px 0px;
+    margin-top: 10px;
+    border: 1px solid #383c4a;
+}
+
+#window,
+#workspaces {
+    margin: 0 4px;
+}
+
+.modules-left > widget:first-child > #workspaces {
+    margin-left: 0;
+}
+
+.modules-right > widget:last-child > #workspaces {
+    margin-right: 0;
+}
+
+#clock {
+    background: #89b4fa;
+    color: #1e1e2e;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+#battery {
+    background: #a6e3a1;
+    color: #1e1e2e;
+    border-radius: 10px;
+}
+
+#battery.charging, #battery.plugged {
+    background: #a6e3a1;
+    color: #1e1e2e;
+}
+
+@keyframes blink {
+    to {
+        background-color: #f38ba8;
+        color: #1e1e2e;
+    }
+}
+
+#battery.critical:not(.charging) {
+    background: #f38ba8;
+    color: #1e1e2e;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+label:focus {
+    background-color: #1e1e2e;
+}
+
+#cpu {
+    background: #fab387;
+    color: #1e1e2e;
+    border-radius: 10px;
+}
+
+#memory {
+    background: #f9e2af;
+    color: #1e1e2e;
+    border-radius: 10px;
+}
+
+#disk {
+    background: #964B00;
+}
+
+#backlight {
+    background: #cba6f7;
+    color: #1e1e2e;
+    border-radius: 10px;
+}
+
+#network {
+    background: #94e2d5;
+    color: #1e1e2e;
+    border-radius: 10px;
+}
+
+#network.disconnected {
+    background: #f38ba8;
+    color: #1e1e2e;
+}
+
+#pulseaudio {
+    background: #f5c2e7;
+    color: #1e1e2e;
+    border-radius: 10px;
+}
+
+#pulseaudio.muted {
+    background: #585b70;
+    color: #cdd6f4;
+}
+
+#wireplumber {
+    background: #fff;
+    color: #000;
+}
+
+#wireplumber.muted {
+    background: #f53c3c;
+}
+
+#custom-media {
+    background: #66cc99;
+    color: #2a5c45;
+    min-width: 100px;
+}
+
+#custom-media.custom-spotify {
+    background: #66cc99;
+}
+
+#custom-media.custom-vlc {
+    background: #ffa000;
+}
+
+#temperature {
+    background: #f0932b;
+    border-radius: 10px;
+}
+
+#temperature.critical {
+    background: #eb4d4b;
+}
+
+#tray {
+    background: #585b70;
+    border-radius: 10px;
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+    background-color: #eb4d4b;
+}
+
+#idle_inhibitor {
+    background: #2d3748;
+    border-radius: 10px;
+}
+
+#idle_inhibitor.activated {
+    background: #ecf0f1;
+    color: #2d3748;
+}
+
+#mpd {
+    background: #66cc99;
+    color: #2a5c45;
+}
+
+#mpd.disconnected {
+    background: #f53c3c;
+}
+
+#mpd.stopped {
+    background: #90b1b1;
+}
+
+#mpd.paused {
+    background: #51a37a;
+}
+
+#language {
+    background: #00b093;
+    color: #740864;
+    padding: 0 5px;
+    margin: 0 5px;
+    min-width: 16px;
+}
+
+#keyboard-state {
+    background: #97e1ad;
+    color: #000;
+    padding: 0 0px;
+    margin: 0 5px;
+    min-width: 16px;
+}
+
+#keyboard-state > label {
+    padding: 0 5px;
+}
+
+#keyboard-state > label.locked {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+#scratchpad {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+#scratchpad.empty {
+    background-color: transparent;
+}
+
+#window {
+    background: #313244;
+    padding: 0 10px;
+    border-radius: 10px;
+    color: #cdd6f4;
+}
