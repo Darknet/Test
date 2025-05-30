@@ -46,4 +46,4 @@ This script provides a comprehensive, automated installation of Hyprland with a 
 
 ### Quick Install
 ```bash
-curl -fsSL https://raw.githubusercontent.com/Darknet/Test/refs/heads/main/Hyprland/install_hyprland.sh | bash
+curl -fsSL https://raw.githubusercontent.com/Darknet/Test/refs/heads/main/Hyprland/install-hyprland-fixed.sh | bash
