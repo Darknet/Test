@@ -2291,7 +2291,6 @@ main() {
     
     echo -e "\n${BLUE}🔧 Useful Commands:${NC}"
     echo -e "   • ${GREEN}Super + Q${NC} - Open terminal"
-    echo -e "   • ${GREEN}Super + R${NC}
     echo -e "   • ${GREEN}Super + R${NC} - Open application launcher"
     echo -e "   • ${GREEN}Super + C${NC} - Close window"
     echo -e "   • ${GREEN}Super + M${NC} - Exit Hyprland"
@@ -2327,10 +2326,10 @@ main() {
     echo -e "   • Configuration: https://wiki.hyprland.org/Configuring/Configuring-Hyprland/"
     echo -e "   • Waybar: https://github.com/Alexays/Waybar/wiki"
     
-    if [[ "$INSTALL_SDDM" == "y" ]]; then
+    if [[ "${INSTALL_SDDM}" == "y" ]]; then
         echo -e "\n${GREEN}🔄 Please reboot to use SDDM and Hyprland${NC}"
         read -p "Reboot now? (y/n): " reboot_now
-        if [[ "$reboot_now" == "y" ]]; then
+        if [[ "${reboot_now}" == "y" ]]; then
             sudo reboot
         fi
     else
@@ -2340,9 +2339,9 @@ main() {
 
 # Error handling
 set -eE
-trap 'error "Script failed at line $LINENO. Command: $BASH_COMMAND"' ERR
+trap 'error "Script failed at line ${LINENO}. Command: ${BASH_COMMAND}"' ERR
 
 # Script execution
 if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
-    main "$@"
+    main "${@}"
 fi
