@@ -1652,10 +1652,16 @@ post_install_setup() {
         log "Downloading sample wallpapers..."
         cd "$HOME/Pictures/Wallpapers"
         
-        # Download some free wallpapers (you can replace these URLs)
-        wget -q "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1920&h=1080&fit=crop" -O "mountain-lake.jpg" 2>/dev/null || true
-        wget -q "https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?w=1920&h=1080&fit=crop" -O "space.jpg" 2>/dev/null || true
-        wget -q "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=1920&h=1080&fit=crop" -O "forest.jpg" 2>/dev/null || true
+        # Download some free wallpapers with proper URL escaping
+        wget -q "https://picsum.photos/1920/1080?random=1" -O "wallpaper1.jpg" 2>/dev/null || true
+        wget -q "https://picsum.photos/1920/1080?random=2" -O "wallpaper2.jpg" 2>/dev/null || true
+        wget -q "https://picsum.photos/1920/1080?random=3" -O "wallpaper3.jpg" 2>/dev/null || true
+        
+        # Alternative: Create a simple gradient wallpaper using ImageMagick if available
+        if command -v convert &> /dev/null; then
+            convert -size 1920x1080 gradient:"#89b4fa"-"#cba6f7" "gradient-blue-purple.png" 2>/dev/null || true
+            convert -size 1920x1080 gradient:"#f38ba8"-"#fab387" "gradient-pink-orange.png" 2>/dev/null || true
+        fi
         
         cd ~
     fi
