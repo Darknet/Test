@@ -1,0 +1,5 @@
+Preguntas para IA
+
+Basado en https://github.com/JaKooLit/Arch-Hyprland  , que usa el script de instalacion de https://raw.githubusercontent.com/JaKooLit/Arch-Hyprland/refs/heads/main/install.sh, en JaKoolit usa el repositorio de dotfiles https://github.com/JaKooLit/Hyprland-Dots y el https://raw.githubusercontent.com/JaKooLit/Hyprland-Dots/refs/heads/main/Distro-Hyprland.sh  para la instalacion, y de https://github.com/mylinuxforwork/dotfiles y con el script de instalacion https://raw.githubusercontent.com/mylinuxforwork/dotfiles/refs/heads/main/setup-arch.sh, preguntar al usuario si quiere instalar waydroid, poner la posibilidad de grafica NVIDIA para wayland e hyprland o si es un portatil con gpu hibrida
+
+Analiza los dotfiles de los repositorios para generarlos de nuevo con lo mejor de ambos
